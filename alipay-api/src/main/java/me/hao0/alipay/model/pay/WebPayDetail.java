@@ -11,6 +11,12 @@ public class WebPayDetail extends PayDetail {
     private static final long serialVersionUID = -1542442458795168095L;
 
     /**
+     * 防钓鱼时间戳
+     * {@link me.hao0.alipay.model.enums.AlipayField#ANTI_PHISHING_KEY}
+     */
+    protected String phishingKey;
+
+    /**
      * 客服端IP
      * {@link me.hao0.alipay.model.enums.AlipayField#EXTER_INVOKE_IP}
      */
@@ -30,6 +36,14 @@ public class WebPayDetail extends PayDetail {
 
     public WebPayDetail(String outTradeNo, String orderName, String totalFee) {
         super(outTradeNo, orderName, totalFee);
+    }
+
+    public String getPhishingKey() {
+        return phishingKey;
+    }
+
+    public void setPhishingKey(String phishingKey) {
+        this.phishingKey = phishingKey;
     }
 
     public String getErrorNotifyUrl() {

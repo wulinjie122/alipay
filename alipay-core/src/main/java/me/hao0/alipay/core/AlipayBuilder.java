@@ -118,6 +118,28 @@ public final class AlipayBuilder {
         return this;
     }
 
+    /**
+     * 设置防钓鱼时间戳
+     * @author wulinjie
+     * @param phishingKey 防钓鱼时间戳
+     * @return
+     */
+    public AlipayBuilder phishingKey(String phishingKey){
+        alipay.phishingKey = phishingKey;
+        return this;
+    }
+
+    /**
+     * 设置客户端IP地址
+     * @author wulinjie
+     * @param exterInvokeIp 客户端IP地址
+     * @return
+     */
+    public AlipayBuilder exterInvokeIp(String exterInvokeIp){
+        alipay.exterInvokeIp = exterInvokeIp;
+        return this;
+    }
+
     public Alipay build() {
         return alipay.start();
     }

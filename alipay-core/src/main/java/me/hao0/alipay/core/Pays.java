@@ -49,9 +49,10 @@ public class Pays extends Component {
         Map<String, String> webPayParams = buildPayParams(webPayDetail, Service.WEB_PAY);
 
         // PC特有参数
-        putIfNotEmpty(webPayParams, AlipayField.EXTER_INVOKE_IP, webPayDetail.getExterInvokeIp());
-        putIfNotEmpty(webPayParams, AlipayField.ERROR_NOTIFY_URL, webPayDetail.getErrorNotifyUrl());
-        putIfNotEmpty(webPayParams, AlipayField.EXTRA_COMMON_PARAM, webPayDetail.getExtraCommonParam());
+        putIfNotEmpty(webPayParams, AlipayField.ANTI_PHISHING_KEY, webPayDetail.getPhishingKey());      // 防钓鱼时间戳
+        putIfNotEmpty(webPayParams, AlipayField.EXTER_INVOKE_IP, webPayDetail.getExterInvokeIp());      // 客户端IP地址
+        putIfNotEmpty(webPayParams, AlipayField.ERROR_NOTIFY_URL, webPayDetail.getErrorNotifyUrl());    // 错误跳转URL
+        putIfNotEmpty(webPayParams, AlipayField.EXTRA_COMMON_PARAM, webPayDetail.getExtraCommonParam());// 商户回传参数(自定义字段)
 
         // md5签名参数
         buildMd5SignParams(webPayParams);

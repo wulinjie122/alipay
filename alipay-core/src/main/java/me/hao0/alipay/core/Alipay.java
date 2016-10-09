@@ -75,6 +75,16 @@ public final class Alipay {
     String qrPubKey;
 
     /**
+     * 防钓鱼KEY
+     */
+    String phishingKey;
+
+    /**
+     * 客户端IP
+     */
+    String exterInvokeIp;
+
+    /**
      * 支付配置参数，不需每次请求都生成
      */
     Map<String, String> payConfig;

@@ -3,6 +3,7 @@ package me.hao0.alipay.model.enums;
 /**
  * 支付宝相关字段集
  * Author: haolin
+ * LastModified: wulinjie122@gmail.com
  * Email: haolin.h0@gmail.com
  * Date: 12/11/15
  */
@@ -31,6 +32,8 @@ public enum AlipayField {
      * 用户在创建交易时，该用户当前所使用机器的IP。如果商户申请后台开通防钓鱼IP地址检查选项，此字段必填，校验用。
      */
     EXTER_INVOKE_IP("exter_invoke_ip", "客户端IP"),
+
+    ANTI_PHISHING_KEY("anti_phishing_key", "防钓鱼时间戳"),
 
     /**
      * 收银台页面上，商品展示的超链接
